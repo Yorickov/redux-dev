@@ -8,7 +8,7 @@ const Increment = (props) => {
 
   const { count } = props;
   return (
-    <div>
+    <div className="col-6">
       <button className="btn btn-primary" onClick={handleClick}>Increment: {count}</button>
     </div>
   );
