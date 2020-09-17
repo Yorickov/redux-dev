@@ -1,24 +1,12 @@
-# README
+# Learning Redux
+Discovering Redux and React (backend - Ruby on Rails)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*based on lessons from [Hexlet](https://hexlet.io)*
 
-Things you may want to cover:
+### Features
+- React 16.13
+- RoR 6.0
+- Redux
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### React components:
+- Increment (pure Redux)

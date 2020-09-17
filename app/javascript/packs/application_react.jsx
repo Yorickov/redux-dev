@@ -1,16 +1,27 @@
-// Run this example by adding <%= javascript_pack_tag 'hello_react' %>
-// to the head of your layout file,
-// like app/views/layouts/application.html.erb. All it does is render
-// <div>Hello React</div> at the bottom
-// of the page.
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hello from './Hello';
+import { createStore } from 'redux';
+import reducer from '../redux/reducers';
+import increment from '../redux/actions';
+import Increment from '../components/Increment';
+
+/* eslint-disable no-underscore-dangle */
+const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+/* eslint-enable */
+
+const store = createStore(reducer, reduxDevtools);
+
+const render = (count) => (
+  ReactDOM.render(
+    <Increment dispatch={store.dispatch} count={count} increment={increment} />,
+    document.getElementById('react-div'),
+  ));
+
+store.subscribe(() => {
+  const state = store.getState();
+  render(state);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Hello />,
-    document.body.appendChild(document.createElement('div')),
-  );
+  render();
 });

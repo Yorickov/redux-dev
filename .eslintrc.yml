@@ -34,3 +34,4 @@ rules:
   react-hooks/exhaustive-deps: 'warn'
   no-restricted-syntax: 0
   object-curly-newline: 0
+  react/no-render-return-value: 0
