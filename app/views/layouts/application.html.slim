@@ -12,12 +12,11 @@ html lang='en'
 
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application_react'
+    / = javascript_pack_tag 'application_react'
 
   body
     main role='main'
       .container.mt-5
         = yield
-      #react-div.container
 
     / = javascript_pack_tag 'application_react'

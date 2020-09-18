@@ -1,28 +1,15 @@
-import { combineReducers } from 'redux';
+import { createReducer, combineReducers } from '@reduxjs/toolkit';
 
-const increment = (state = 0, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1;
-    default:
-      return state;
-  }
-};
+const counter = createReducer(0, {
+  INCREMENT: (state) => state + 1,
+});
 
-const text = (state = '', action) => {
-  switch (action.type) {
-    case 'TEXT_UPDATE': {
-      return action.payload.text;
-    }
-    case 'TEXT_RESET': {
-      return '';
-    }
-    default:
-      return state;
-  }
-};
+const text = createReducer('', {
+  TEXT_UPDATE: (state, action) => action.payload.text,
+  TEXT_RESET: () => '',
+});
 
 export default combineReducers({
-  increment,
+  counter,
   text,
 });

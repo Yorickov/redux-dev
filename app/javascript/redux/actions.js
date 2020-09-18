@@ -1,16 +1,10 @@
-export const increment = () => ({
-  type: 'INCREMENT',
-  payload: {},
-});
+import { createAction } from '@reduxjs/toolkit';
 
-export const updateText = (text) => ({
-  type: 'TEXT_UPDATE',
-  payload: {
-    text,
-  },
-});
+export const increment = createAction('INCREMENT');
 
-export const resetText = () => ({
-  type: 'TEXT_RESET',
-  payload: {},
-});
+export const updateText = createAction(
+  'TEXT_UPDATE',
+  (text) => ({ payload: { text } }),
+);
+
+export const resetText = createAction('TEXT_RESET');
