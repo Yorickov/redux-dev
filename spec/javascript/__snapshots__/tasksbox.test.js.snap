@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Store 1`] = `
+<div
+  class="col-5"
+>
+  <form
+    action=""
+    class="form-inline"
+  >
+    <div
+      class="form-group mx-sm-3"
+    >
+      <input
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      class="btn btn-primary btn-sm"
+      type="submit"
+    >
+      Add
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Store 2`] = `
+<div
+  class="col-5"
+>
+  <form
+    action=""
+    class="form-inline"
+  >
+    <div
+      class="form-group mx-sm-3"
+    >
+      <input
+        required=""
+        type="text"
+        value="first task"
+      />
+    </div>
+    <button
+      class="btn btn-primary btn-sm"
+      type="submit"
+    >
+      Add
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Store 3`] = `
+<div
+  class="col-5"
+>
+  <form
+    action=""
+    class="form-inline"
+  >
+    <div
+      class="form-group mx-sm-3"
+    >
+      <input
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      class="btn btn-primary btn-sm"
+      type="submit"
+    >
+      Add
+    </button>
+  </form>
+  <div
+    class="mt-3"
+  >
+    <ul
+      class="list-group"
+    >
+      <li
+        class="list-group-item d-flex"
+      >
+        <span
+          class="mr-auto"
+        >
+          first task
+        </span>
+        <button
+          class="close"
+          type="button"
+        >
+          <span>
+            ×
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Store 4`] = `
+<div
+  class="col-5"
+>
+  <form
+    action=""
+    class="form-inline"
+  >
+    <div
+      class="form-group mx-sm-3"
+    >
+      <input
+        required=""
+        type="text"
+        value="another task"
+      />
+    </div>
+    <button
+      class="btn btn-primary btn-sm"
+      type="submit"
+    >
+      Add
+    </button>
+  </form>
+  <div
+    class="mt-3"
+  >
+    <ul
+      class="list-group"
+    >
+      <li
+        class="list-group-item d-flex"
+      >
+        <span
+          class="mr-auto"
+        >
+          first task
+        </span>
+        <button
+          class="close"
+          type="button"
+        >
+          <span>
+            ×
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Store 5`] = `
+<div
+  class="col-5"
+>
+  <form
+    action=""
+    class="form-inline"
+  >
+    <div
+      class="form-group mx-sm-3"
+    >
+      <input
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      class="btn btn-primary btn-sm"
+      type="submit"
+    >
+      Add
+    </button>
+  </form>
+  <div
+    class="mt-3"
+  >
+    <ul
+      class="list-group"
+    >
+      <li
+        class="list-group-item d-flex"
+      >
+        <span
+          class="mr-auto"
+        >
+          another task
+        </span>
+        <button
+          class="close"
+          type="button"
+        >
+          <span>
+            ×
+          </span>
+        </button>
+      </li>
+      <li
+        class="list-group-item d-flex"
+      >
+        <span
+          class="mr-auto"
+        >
+          first task
+        </span>
+        <button
+          class="close"
+          type="button"
+        >
+          <span>
+            ×
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Store 6`] = `
+<div
+  class="col-5"
+>
+  <form
+    action=""
+    class="form-inline"
+  >
+    <div
+      class="form-group mx-sm-3"
+    >
+      <input
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      class="btn btn-primary btn-sm"
+      type="submit"
+    >
+      Add
+    </button>
+  </form>
+  <div
+    class="mt-3"
+  >
+    <ul
+      class="list-group"
+    >
+      <li
+        class="list-group-item d-flex"
+      >
+        <span
+          class="mr-auto"
+        >
+          another task
+        </span>
+        <button
+          class="close"
+          type="button"
+        >
+          <span>
+            ×
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

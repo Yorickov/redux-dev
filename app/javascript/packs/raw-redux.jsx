@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { configureStore } from '@reduxjs/toolkit';
-import reducers from '../redux/reducers';
-import * as actionCreators from '../redux/actions';
+import reducers from '../reducers/raw';
+import * as actionCreators from '../actions/raw';
 import Increment from '../components/Increment';
 import TextForm from '../components/TextForm';
 

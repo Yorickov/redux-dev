@@ -6,7 +6,10 @@ Discovering Redux and React (backend - Ruby on Rails)
 ### Features
 - React 16.13
 - RoR 6.0
-- Redux
+- Redux Toolkit
+- react-redux
 
 ### React components:
-- Increment (pure Redux)
+- Increment (Redux-TK)
+- TextForm (Redux-TK)
+- TasksBox (react-redux)
