@@ -36,6 +36,20 @@ it('Store', () => {
   link.simulate('click');
   expect(wrapper.render()).toMatchSnapshot();
 
+  const activeFilterButton = wrapper.find('[data-test="task-filter-active"]');
+  const finishedFilterButton = wrapper.find('[data-test="task-filter-finished"]');
+
+  activeFilterButton.simulate('click');
+  expect(wrapper.render()).toMatchSnapshot();
+
+  finishedFilterButton.simulate('click');
+  expect(wrapper.render()).toMatchSnapshot();
+
+  const allFilterButton = wrapper.find('[data-test="task-filter-all"]');
+
+  allFilterButton.simulate('click');
+  expect(wrapper.render()).toMatchSnapshot();
+
   const button = wrapper.find('.close');
   button.last().simulate('click');
   expect(wrapper.render()).toMatchSnapshot();
