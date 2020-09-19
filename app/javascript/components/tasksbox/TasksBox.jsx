@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { updateNewTaskText, addTask, removeTask } from '../../actions';
+import * as actions from '../../actions';
 
 // state => state
 const mapStateToProps = ({ tasks, text }) => {
@@ -9,22 +9,26 @@ const mapStateToProps = ({ tasks, text }) => {
   return props;
 };
 
+const actionCreators = {
+  ...actions,
+};
+
 const TasksBox = (props) => {
   const handleAddTask = (e) => {
     e.preventDefault();
-    const { dispatch, text } = props;
+    const { addTask, text } = props;
     const task = { text, id: _.uniqueId() };
-    dispatch(addTask(task));
+    addTask(task);
   };
 
   const handleRemoveTask = (id) => () => {
-    const { dispatch } = props;
-    dispatch(removeTask(id));
+    const { removeTask } = props;
+    removeTask(id);
   };
 
   const handleUpdateNewTaskText = (e) => {
-    const { dispatch } = props;
-    dispatch(updateNewTaskText(e.target.value));
+    const { updateNewTaskText } = props;
+    updateNewTaskText(e.target.value);
   };
 
   const renderTasks = (tasks) => {
@@ -61,4 +65,4 @@ const TasksBox = (props) => {
   );
 };
 
-export default connect(mapStateToProps)(TasksBox);
+export default connect(mapStateToProps, actionCreators)(TasksBox);
