@@ -8,4 +8,5 @@ const TasksBox = () => (
     <Tasks />
   </div>
 );
+
 export default TasksBox;

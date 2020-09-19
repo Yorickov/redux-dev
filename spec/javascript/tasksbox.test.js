@@ -32,7 +32,11 @@ it('Store', () => {
   newTaskSubmit.simulate('submit');
   expect(wrapper.render()).toMatchSnapshot();
 
-  const links = wrapper.find('.close');
-  links.last().simulate('click');
+  const link = wrapper.find('[data-test="task-toggle-state"]').first();
+  link.simulate('click');
+  expect(wrapper.render()).toMatchSnapshot();
+
+  const button = wrapper.find('.close');
+  button.last().simulate('click');
   expect(wrapper.render()).toMatchSnapshot();
 });

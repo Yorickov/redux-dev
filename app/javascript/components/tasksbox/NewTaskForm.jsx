@@ -1,12 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import _ from 'lodash';
+import { nanoid } from '@reduxjs/toolkit';
 import * as actions from '../../actions';
 
-const mapStateToProps = (state) => {
-  const props = { text: state.text };
-  return props;
-};
+const mapStateToProps = (state) => ({ text: state.text });
 
 const actionCreators = {
   updateNewTaskText: actions.updateNewTaskText,
@@ -22,7 +19,7 @@ const NewTaskForm = (props) => {
   const handleAddTask = (e) => {
     e.preventDefault();
     const { addTask, text } = props;
-    const task = { id: _.uniqueId(), text };
+    const task = { id: nanoid(), text, state: 'active' };
     addTask(task);
   };
 
