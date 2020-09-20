@@ -1,43 +1,35 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 
-const mapStateToProps = (state) => ({ text: state.text });
+const mapStateToProps = () => ({});
 
 const actionCreators = {
-  updateNewTaskText: actions.updateNewTaskText,
   addTask: actions.addTask,
 };
 
 const NewTaskForm = (props) => {
-  const handleUpdateNewTaskText = (e) => {
-    const { updateNewTaskText } = props;
-    updateNewTaskText(e.target.value);
-  };
-
-  const handleAddTask = (e) => {
-    e.preventDefault();
-    const { addTask, text } = props;
-    const task = { id: nanoid(), text, state: 'active' };
+  const handleAddTask = (values) => {
+    const { addTask, reset } = props;
+    const task = { ...values, id: nanoid(), state: 'active' };
     addTask(task);
+    reset();
   };
 
-  const { text } = props;
+  const { handleSubmit } = props;
 
   return (
-    <form action="" className="form-inline" onSubmit={handleAddTask}>
+    <form action="" className="form-inline" onSubmit={handleSubmit(handleAddTask)}>
       <div className="form-group mx-sm-3">
-        <input
-          type="text"
-          required
-          value={text}
-          onChange={handleUpdateNewTaskText}
-        />
+        <Field name="text" required component="input" type="text" />
       </div>
       <button type="submit" className="btn btn-primary btn-sm">Add</button>
     </form>
   );
 };
 
-export default connect(mapStateToProps, actionCreators)(NewTaskForm);
+const ConnectedNewTaskForm = connect(mapStateToProps, actionCreators)(NewTaskForm);
+
+export default reduxForm({ form: 'newTask' })(ConnectedNewTaskForm);

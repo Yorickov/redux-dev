@@ -1,5 +1,6 @@
 import { createReducer, combineReducers } from '@reduxjs/toolkit';
 import _ from 'lodash';
+import { reducer as formReducer } from 'redux-form';
 import {
   updateNewTaskText,
   addTask,
@@ -47,6 +48,7 @@ const tasks = createReducer({ byId: {}, allIds: [], currentFilterName: 'all' }, 
 export default combineReducers({
   text,
   tasks,
+  form: formReducer,
 });
 
 // const text = createReducer('', {

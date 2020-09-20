@@ -12,6 +12,7 @@ exports[`Store 1`] = `
       class="form-group mx-sm-3"
     >
       <input
+        name="text"
         required=""
         type="text"
         value=""
@@ -61,6 +62,7 @@ exports[`Store 2`] = `
       class="form-group mx-sm-3"
     >
       <input
+        name="text"
         required=""
         type="text"
         value="first task"
@@ -110,6 +112,7 @@ exports[`Store 3`] = `
       class="form-group mx-sm-3"
     >
       <input
+        name="text"
         required=""
         type="text"
         value=""
@@ -190,6 +193,7 @@ exports[`Store 4`] = `
       class="form-group mx-sm-3"
     >
       <input
+        name="text"
         required=""
         type="text"
         value="another task"
@@ -270,6 +274,7 @@ exports[`Store 5`] = `
       class="form-group mx-sm-3"
     >
       <input
+        name="text"
         required=""
         type="text"
         value=""
@@ -372,6 +377,7 @@ exports[`Store 6`] = `
       class="form-group mx-sm-3"
     >
       <input
+        name="text"
         required=""
         type="text"
         value=""
@@ -476,6 +482,7 @@ exports[`Store 7`] = `
       class="form-group mx-sm-3"
     >
       <input
+        name="text"
         required=""
         type="text"
         value=""
@@ -556,6 +563,7 @@ exports[`Store 8`] = `
       class="form-group mx-sm-3"
     >
       <input
+        name="text"
         required=""
         type="text"
         value=""
@@ -638,6 +646,7 @@ exports[`Store 9`] = `
       class="form-group mx-sm-3"
     >
       <input
+        name="text"
         required=""
         type="text"
         value=""
@@ -742,6 +751,7 @@ exports[`Store 10`] = `
       class="form-group mx-sm-3"
     >
       <input
+        name="text"
         required=""
         type="text"
         value=""
