@@ -4,9 +4,16 @@ import * as actions from '../../actions';
 import { filteredTasksSelector } from '../../selectors';
 
 const mapStateToProps = (state) => {
+  const { tasksFetchingState } = state;
   const tasks = filteredTasksSelector(state);
-  return { tasks };
+  return { tasks, tasksFetchingState };
 };
+
+// const mapStateToProps = (state) => {
+//   const { tasksFetchingState, tasks: { byId, allIds } } = state;
+//   const tasks = allIds.map((id) => byId[id]);
+//   return { tasks, tasksFetchingState };
+// };
 
 const actionCreators = {
   removeTask: actions.removeTask,
@@ -49,10 +56,28 @@ const Tasks = (props) => {
     );
   };
 
-  const { tasks } = props;
+  const { tasks, tasksFetchingState } = props;
+
+  if (tasksFetchingState === 'requested') {
+    return (
+      <div className="spinner-border m-3" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
+    );
+  }
+  if (tasksFetchingState === 'failed') {
+    return (
+      <span>Please, reload page!</span>
+    );
+  }
+
+  if (tasks.length === 0) {
+    return null;
+  }
+
   return (
     <div className="mt-3">
-      {renderTasks(tasks)}
+      {renderTasks(tasks, tasksFetchingState)}
     </div>
   );
 };

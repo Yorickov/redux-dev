@@ -1,15 +1,35 @@
 import { createReducer, combineReducers } from '@reduxjs/toolkit';
 import _ from 'lodash';
 import { reducer as formReducer } from 'redux-form';
-import {
-  addTask,
-  removeTask,
-  toggleTaskState,
-  setTasksFilter,
-} from '../actions';
+import * as actions from '../actions';
+
+const tasksFetchingState = createReducer('none', {
+  [actions.fetchTasksRequest]: () => 'requested',
+  [actions.fetchTasksFailure]: () => 'failed',
+  [actions.fetchTasksSuccess]: () => 'finished',
+});
+
+const taskRemovingState = createReducer('none', {
+  [actions.removeTaskRequest]: () => 'requested',
+  [actions.removeTaskFailure]: () => 'failed',
+  [actions.removeTaskSuccess]: () => 'finished',
+});
+
+const taskAddingState = createReducer('none', {
+  [actions.addTaskRequest]: () => 'requested',
+  [actions.addTaskFailure]: () => 'failed',
+  [actions.addTaskSuccess]: () => 'finished',
+});
 
 const tasks = createReducer({ byId: {}, allIds: [], currentFilterName: 'all' }, {
-  [addTask]: (state, { payload: { task } }) => {
+  [actions.fetchTasksSuccess]: (state, { payload }) => (
+    {
+      ...state,
+      byId: _.keyBy(payload.tasks, 'id'),
+      allIds: payload.tasks.map((t) => t.id),
+    }
+  ),
+  [actions.addTaskSuccess]: (state, { payload: { task } }) => {
     const { byId, allIds } = state;
     return {
       ...state,
@@ -17,7 +37,7 @@ const tasks = createReducer({ byId: {}, allIds: [], currentFilterName: 'all' }, 
       allIds: [task.id, ...allIds],
     };
   },
-  [removeTask]: (state, { payload: { id } }) => {
+  [actions.removeTaskSuccess]: (state, { payload: { id } }) => {
     const { byId, allIds } = state;
     return {
       ...state,
@@ -25,7 +45,7 @@ const tasks = createReducer({ byId: {}, allIds: [], currentFilterName: 'all' }, 
       allIds: _.without(allIds, id),
     };
   },
-  [toggleTaskState]: (state, { payload: { id } }) => {
+  [actions.toggleTaskState]: (state, { payload: { id } }) => {
     const task = state.byId[id];
 
     const newState = task.state === 'active' ? 'finished' : 'active';
@@ -35,26 +55,14 @@ const tasks = createReducer({ byId: {}, allIds: [], currentFilterName: 'all' }, 
       byId: { ...state.byId, [task.id]: updatedTask },
     };
   },
-  [setTasksFilter]: (state, { payload: { filterName } }) => (
+  [actions.setTasksFilter]: (state, { payload: { filterName } }) => (
     { ...state, currentFilterName: filterName }),
 });
 
 export default combineReducers({
+  taskRemovingState,
+  tasksFetchingState,
+  taskAddingState,
   tasks,
   form: formReducer,
 });
-
-// const text = createReducer('', {
-//   TEXT_UPDATE: (state, { payload }) => payload.text,
-//   TASK_ADD: () => '',
-// });
-
-// const tasks = createReducer([], {
-//   TASK_ADD: (state, { payload }) => ([payload.task, ...state]),
-//   TASK_REMOVE: (state, { payload }) => state.filter(((task) => task.id !== payload.id)),
-// });
-
-// export default combineReducers({
-//   text,
-//   tasks,
-// });

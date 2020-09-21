@@ -20,6 +20,7 @@ exports[`Store 1`] = `
     </div>
     <button
       class="btn btn-primary btn-sm"
+      disabled=""
       type="submit"
     >
       Add
@@ -44,9 +45,6 @@ exports[`Store 1`] = `
       Finished Tasks
     </button>
   </div>
-  <div
-    class="mt-3"
-  />
 </div>
 `;
 
@@ -94,9 +92,6 @@ exports[`Store 2`] = `
       Finished Tasks
     </button>
   </div>
-  <div
-    class="mt-3"
-  />
 </div>
 `;
 
@@ -120,6 +115,7 @@ exports[`Store 3`] = `
     </div>
     <button
       class="btn btn-primary btn-sm"
+      disabled=""
       type="submit"
     >
       Add
@@ -282,6 +278,7 @@ exports[`Store 5`] = `
     </div>
     <button
       class="btn btn-primary btn-sm"
+      disabled=""
       type="submit"
     >
       Add
@@ -385,6 +382,7 @@ exports[`Store 6`] = `
     </div>
     <button
       class="btn btn-primary btn-sm"
+      disabled=""
       type="submit"
     >
       Add
@@ -428,9 +426,7 @@ exports[`Store 6`] = `
               data-test="task-toggle-state"
               href="#"
             >
-              <s>
-                another task
-              </s>
+              another task
             </a>
           </span>
           <button
@@ -452,7 +448,9 @@ exports[`Store 6`] = `
               data-test="task-toggle-state"
               href="#"
             >
-              first task
+              <s>
+                first task
+              </s>
             </a>
           </span>
           <button
@@ -490,6 +488,7 @@ exports[`Store 7`] = `
     </div>
     <button
       class="btn btn-primary btn-sm"
+      disabled=""
       type="submit"
     >
       Add
@@ -533,7 +532,7 @@ exports[`Store 7`] = `
               data-test="task-toggle-state"
               href="#"
             >
-              first task
+              another task
             </a>
           </span>
           <button
@@ -571,6 +570,7 @@ exports[`Store 8`] = `
     </div>
     <button
       class="btn btn-primary btn-sm"
+      disabled=""
       type="submit"
     >
       Add
@@ -615,7 +615,7 @@ exports[`Store 8`] = `
               href="#"
             >
               <s>
-                another task
+                first task
               </s>
             </a>
           </span>
@@ -654,6 +654,7 @@ exports[`Store 9`] = `
     </div>
     <button
       class="btn btn-primary btn-sm"
+      disabled=""
       type="submit"
     >
       Add
@@ -697,9 +698,7 @@ exports[`Store 9`] = `
               data-test="task-toggle-state"
               href="#"
             >
-              <s>
-                another task
-              </s>
+              another task
             </a>
           </span>
           <button
@@ -721,7 +720,9 @@ exports[`Store 9`] = `
               data-test="task-toggle-state"
               href="#"
             >
-              first task
+              <s>
+                first task
+              </s>
             </a>
           </span>
           <button
@@ -759,6 +760,7 @@ exports[`Store 10`] = `
     </div>
     <button
       class="btn btn-primary btn-sm"
+      disabled=""
       type="submit"
     >
       Add
@@ -802,9 +804,7 @@ exports[`Store 10`] = `
               data-test="task-toggle-state"
               href="#"
             >
-              <s>
-                another task
-              </s>
+              another task
             </a>
           </span>
           <button
