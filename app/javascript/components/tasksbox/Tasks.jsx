@@ -49,10 +49,10 @@ const Tasks = (props) => {
     );
   };
 
-  const { tasks, text } = props;
+  const { tasks } = props;
   return (
     <div className="mt-3">
-      {renderTasks(tasks, text)}
+      {renderTasks(tasks)}
     </div>
   );
 };
