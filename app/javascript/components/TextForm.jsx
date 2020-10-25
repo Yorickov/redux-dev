@@ -2,7 +2,6 @@ import React from 'react';
 
 const TextForm = (props) => {
   const handleChange = (e) => {
-    e.preventDefault();
     const { dispatch, updateText } = props;
     dispatch(updateText(e.target.value));
   };
